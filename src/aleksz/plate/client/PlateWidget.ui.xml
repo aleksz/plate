@@ -1,0 +1,98 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+  xmlns:g="urn:import:com.google.gwt.user.client.ui">
+  <ui:style>
+
+    .text {
+      border: none;
+      font-size: 1em;
+    }
+
+    .europeCell {
+      background-color: blue;
+      color: white;
+      width: 0.649em;
+    }
+
+    .europeCell {
+      background-color: blue;
+      color: white;
+      width: 0.649em;
+    }
+
+    .europeCell img {
+      width: 0.649em;
+    }
+
+    .europeCell div {
+      text-align: center;
+      font-size: 0.268em;
+    }
+
+    .plate {
+    }
+
+    @external topCenter, bottomCenter;
+    .plate .topCenter,
+    .plate .bottomCenter {
+      background-color: black;
+    }
+
+		@external middleLeft, middleRight;
+    .plate .middleLeft,
+    .plate .middleRight {
+      background-color: black;
+    }
+
+    @external topLeftInner, topRightInner, bottomLeftInner, bottomRightInner;
+    .plate .topLeftInner,
+    .plate .topRightInner,
+    .plate .bottomLeftInner,
+    .plate .bottomRightInner {
+      zoom: 1;
+      width: 0.09em;
+      height: 0.09em;
+    }
+
+    @external topLeft;
+    .plate .topLeft {
+    }
+
+    @external topRight;
+    .plate .topRight {
+    }
+
+    @external bottomLeft;
+    .plate .bottomLeft {
+    }
+
+    @external bottomRight;
+    .plate .bottomRight {
+    }
+
+    @external topLeftInner, topRightInner, bottomLeftInner, bottomRightInner;
+    * html .plate .topLeftInner,
+    * html .plate .topRightInner,
+    * html .plate .bottomLeftInner,
+    * html .plate .bottomRightInner
+      {
+      overflow: hidden;
+    }
+  </ui:style>
+
+  <g:HTMLPanel>
+
+    <g:DecoratorPanel styleName="{style.plate}">
+      <g:HorizontalPanel>
+          <g:VerticalPanel styleName="{style.europeCell}">
+            <g:Image url="plate/images/flag.png"/>
+            <g:Label>EST</g:Label>
+          </g:VerticalPanel>
+        <g:TextBox styleName="{style.text}" ui:field="sequence" maxLength="9" visibleLength="9"/>
+      </g:HorizontalPanel>
+    </g:DecoratorPanel>
+
+    <g:Label ui:field="type" />
+  </g:HTMLPanel>
+
+</ui:UiBinder>
